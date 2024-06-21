@@ -33,6 +33,8 @@ from tbsim.utils.loss_utils import (
 
 class RasterizedPlanningModel(nn.Module):
     """Raster-based model for planning.
+    [CRH] main model entry
+    Where does history come in for this model?
     """
 
     def __init__(

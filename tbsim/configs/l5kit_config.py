@@ -17,7 +17,7 @@ class L5KitTrainConfig(TrainConfig):
         self.rollout.every_n_steps = 5000
 
         # training config
-        self.training.batch_size = 100
+        self.training.batch_size = 16
         self.training.num_steps = 100000
         self.training.num_data_workers = 8
 
@@ -26,7 +26,7 @@ class L5KitTrainConfig(TrainConfig):
 
         # validation config
         self.validation.enabled = True
-        self.validation.batch_size = 32
+        self.validation.batch_size = 16
         self.validation.num_data_workers = 6
         self.validation.every_n_steps = 500
         self.validation.num_steps_per_epoch = 50

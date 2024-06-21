@@ -1,0 +1,6 @@
+planner:
+  ckpt_dir: /media/bizon/Disk1/ws/Nvidia/tbsim/spatial_planner_trained_models/test/run7
+  ckpt_key: iter305000
+predictor:
+  ckpt_dir: /media/bizon/Disk1/ws/Nvidia/tbsim/agent_predictor_trained_models/test/run1
+  ckpt_key: iter471000

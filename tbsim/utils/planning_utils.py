@@ -184,8 +184,8 @@ def ego_sample_planning(
         depth = 3
         min_dis = np.inf*np.ones([bs,Ne])
         for i,vmap in enumerate(vector_map):
-            
-            nearby_lanes = vmap.get_lanes_within(world_xyz[i,0,0],30)
+            # [CRH] https://github.com/NVlabs/traffic-behavior-simulation/issues/2
+            nearby_lanes = vmap.get_lanes_within(world_xyz[i,0,0],100)
             dis = np.inf*np.ones([len(nearby_lanes)])
             for j,lane in enumerate(nearby_lanes):
                 dx,dy,dh = GeoUtils.batch_proj(world_xyh[i,0,0],lane.center.points[None,...,[0,1,3]])

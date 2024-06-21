@@ -36,6 +36,9 @@ pip install -e .
 ```
 
 Usually the user needs to install torch separately that fits the hardware setup (OS, GPU, CUDA version, etc., check https://pytorch.org/get-started/locally/ for instructions)
+
+[CRH Note] If one downloaded all the repo, one can run the [setup.sh](setup.sh).
+
 ## Quick start
 ### 1. Obtain dataset(s)
 We currently support the Lyft Level 5 [dataset](https://woven.toyota/en/prediction-dataset) and the nuScenes [dataset](https://www.nuscenes.org/nuscenes).
@@ -101,6 +104,7 @@ python scripts/train.py --dataset_path <path-to-nuScenes-data-directory> --confi
 
 See the list of registered algorithms in `configs/registry.py`
 ### 4. Evaluate a trained model (closed-loop simulation)
+[CRH] is it true that the trained simulation can only be simulated with the same dataset? Can it extend?
 ```
 python scripts/evaluate.py \
   --results_root_dir results/ \

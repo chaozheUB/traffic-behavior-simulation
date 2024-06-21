@@ -42,6 +42,7 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import wandb
 
 
+# [CRH] template to use lighting module
 class BehaviorCloning(pl.LightningModule):
     def __init__(self, algo_config, modality_shapes, do_log=True):
         """
@@ -52,6 +53,10 @@ class BehaviorCloning(pl.LightningModule):
         self.nets = nn.ModuleDict()
         self._do_log = do_log
 
+        # [CRH] so from map output to trajectory is called decoder?
+        # how to make sure the decoded trajectory makes phyiscal sense?
+        # I gues because it actions integral ones so it makes physically sense?
+        # and because of the dynamic bounds, it will be bounded?
         traj_decoder = MLPTrajectoryDecoder(
             feature_dim=algo_config.map_feature_dim,
             state_dim=3,

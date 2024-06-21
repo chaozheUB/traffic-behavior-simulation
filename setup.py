@@ -16,8 +16,8 @@ setup(
     packages=[package for package in find_packages() if package.startswith("tbsim")],
     install_requires=[
         "l5kit==1.5.0",
-        "numpy>=1.19.0",  # need to manually update numpy version to (1.21.4) due to conflict with l5kit's requirement
-        "pytorch-lightning",
+        "numpy==1.19.0",  # need to manually update numpy version to (1.21.4) due to conflict with l5kit's requirement
+        "pytorch-lightning==1.6.0",
         "wandb",
         "torch>=1.13.1",
         "torchvision>=0.11.3",
